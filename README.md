@@ -32,5 +32,5 @@
 -DisplayBook.js (functional component: this will display my books)
     - Book.js (stateful componenet: this.state.review, this.state.editing)
 
-### Wireframe
+### Wireframe/ Mockup
 <img src = "./pictures/Stephen-King-mockup.PNG">
