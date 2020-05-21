@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Stephen King Library
 
-## Available Scripts
+## Aplication Concept and Wireframe
+### Application Concept
+- This is a application which displays popular books by Stephen King that I have read or want to read again.
+- I will create my own personal file which will hold the data of the books
+- Full CRUD
+    - GET: get all the Stephen King books
+    - POST: display Book information with image in my array and add a book to the array.
+    - PUT: update a review on the book.
+    - DELETE: Remove the book from my list once I have read it.
 
-In the project directory, you can run:
+### Functionality
+- I want a header at the top of the page to display the name of my applicaiton/site.
+- When the app loads it will show the book image, title, year, page count, and review of all the books in my list.
+- When the "Add Book" button is clicked it allows me to add a newBook to the list (adding: new image url, title, year, page count, along with a review of the newBook).
+- Once I finish adding the book it will push it to my array.
+- The list will now display that new book with its image, title, year, and page count
+- The Books in the list will have a "Finished" button that allows me to remove it from the list.
+-I can then update my review of a book.
 
-### `npm start`
+### Endpoints
+- GET - Books from my array of objects.
+- POST - Push the newBook to the list and display it
+- UPDATE - I can update the review for each book I read.
+- DELETE - I can remove any book from my list that is being display.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Component Architecture
+- App.js (sateful component: This will hold the book information, this.state.books)
+-Header.js (functional component: This will hold my header to the site)
+-Finder.js (stateful component: this will get my book data that I have created in my file by using a axios request to get it.)
+-DisplayBook.js (functional component: this will display my books)
+    - Book.js (stateful componenet: this.state.review, this.state.editing)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Wireframe
+<img src = "./pictures/Stephen-King-mockup.PNG">
