@@ -22,7 +22,7 @@ module.exports = {
 
     editReview: (req, res) => {
         const {book_id} = req.params;
-        const {newReview} = req.body;
+        const {review} = req.body;
 
         const index = book.findIndex(element => element.id === +book_id);
         
@@ -30,7 +30,7 @@ module.exports = {
             return res.status(404).send("No book found");
         }
 
-        book[index].review = newReview;
+        book[index].review = review;
         res.status(200).send(book);
     },
 
