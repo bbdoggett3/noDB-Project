@@ -19,3 +19,9 @@
 .books-container span {
   font-weight: bolder;
 }
+
+.review {
+  height: 100px;
+  width: 100px;
+  background-color: dodgerblue;
+}

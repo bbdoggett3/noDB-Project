@@ -1,16 +1,18 @@
 import React from 'react';
+import Review from './Review';
 
 function Finder(props) {
-    console.log(props)
+    const booksMap = props.books.map((element) => (
+        <Review key={element.id}
+                editReview = {props.editReview}
+                removeBook = {props.removeBook}
+                data = {element}
+        />
+    ))
+ 
     return(
-        <div className="books-container">
-            <img src= {props.book.img} alt={`Book cover for ${props.book.title} `} />
-            <h3>{props.book.title}</h3>
-            <p><span>Year:</span> {props.book.year}</p>
-            <p><span>Pages:</span> {props.book.pageCount}</p>
-            <p><span>Review:</span> {props.book.review}</p>
-            <button>Add Review</button>
-            <button>Remove Book</button>
+        <div>
+            {booksMap}
         </div>
     )
 }

@@ -36,7 +36,7 @@ module.exports = {
 
     removeBook: (req, res) => {
         const {book_id} = req.params;
-
+        console.log(book_id)
         const index = book.findIndex(element => element.id === +book_id);
 
         if(index === -1) {

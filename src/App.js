@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
+import DisplayBook from './components/DisplayBook';
 import Finder from './components/Finder';
 import axios from 'axios';
 import './App.css';
@@ -33,13 +34,14 @@ makeNewBook(title, year, pageCount, img, review ) {
 
 editReview(id, newReview) {
   const body = {newReview}
-  axios.put(`/api/books ${id}`, body).then(response => {
+  axios.put(`/api/books/${id}`, body).then(response => {
     this.setState({books: response.data})
   })
 }
 
 removeBook(id) {
-  axios.delete(`/api/books ${id}`).then(response => {
+  console.log(id)
+  axios.delete(`/api/books/${id}`).then(response => {
     this.setState({books: response.data})
   })
 }
@@ -48,7 +50,7 @@ removeBook(id) {
     
     const booksMapped = this.state.books.map(element => {
       return <div>
-        <Finder book = {element} />
+        <DisplayBook book = {element} />
       </div>
       
     })
@@ -56,7 +58,11 @@ removeBook(id) {
       <div className="App">
         <Header />
         {booksMapped}
-        
+        <Finder
+          books = {this.state.books}
+          editReview = {this.editReview}
+          removeBook = {this.removeBook}
+        />
       </div>
     );
   }
