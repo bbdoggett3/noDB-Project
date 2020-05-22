@@ -34,6 +34,6 @@ in my file by using a axios request to get it.)
 - DisplayBook.js (functional component: this will display my books)
     - Review.js (stateful component: this.state.review, this.state.editing)
 
-### Wireframe/ Mockup
+### Wireframe/ Mockup  figma.com
 <img src = "./pictures/Stephen-King-mockup1.PNG">
 <img src = "./pictures/Stephen-King-wireframe.PNG">
