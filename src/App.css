@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #333333;
+  color: white
 }
 
 .books-container {
@@ -21,7 +23,30 @@
 }
 
 .review {
-  height: 100px;
-  width: 100px;
-  background-color: dodgerblue;
+  margin: auto;
+  width: 15%;
+  background-color: green;
+  border: 3px solid black;
+  border-radius: 12px;
+  padding: 10px;
+  color: white;
+}
+
+.review:hover {
+  background-color: white;
+  color: green;
+}
+
+.remove-button {
+  background-color: red;
+  color: white;
+  border-radius: 12px;
+  padding: 5px;
+  margin: 8px;
+}
+
+.remove-button:hover {
+  background-color: white;
+  color: red;
+  border-radius: 12px;
 }

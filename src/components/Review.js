@@ -24,24 +24,37 @@ class Review extends Component {
     }
 
     handleReview() {
-        this.props.editReview(this.props.id, this.state.userInput)
+        this.props.editReview(this.props.data.id, this.state.userInput)
         this.toggleEdit()
     }
 
 
 
     render() {
+        console.log("this is the new input", this.state.userInput)
         return (
             <div>
-                {!this.state.isEditing ? <p className= "review" onClick={() => this.toggleEdit()}>{this.props.data.review}</p> :
+                <div className="books-container">
+                    <img src= {this.props.data.img} alt={`Book cover for ${this.props.data.title} `} />
+
+                    <div className="books-info">
+                        <h3>{this.props.data.title}</h3>
+                        <p><span>Year:</span> {this.props.data.year}</p>
+                        <p><span>Pages:</span> {this.props.data.pageCount}</p>
+                        <p><span>Review:</span> {this.props.data.review}</p>
+                    </div>
+
+                </div>
+
+                {!this.state.isEditing ? <p className= "review" onClick={() => this.toggleEdit()}>Update Review</p> :
 
                     <div>
                         <input onChange={event => this.handleChange(event)} />
                         <button onClick={() => this.toggleEdit()}>Cancel</button>
-                        <button onClick={() => this.handleReview()}>Save</button>
+                        <button onClick={() => this.handleReview(this.props.data.id)}>Save</button>
                     </div>}
 
-                <button onClick={() => this.props.removeBook(this.props.data.id)}>Remove Book
+                <button class ="remove-button" onClick={() => this.props.removeBook(this.props.data.id)}>Remove Book
             </button>
             </div>
         )

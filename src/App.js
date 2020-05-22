@@ -32,9 +32,9 @@ makeNewBook(title, year, pageCount, img, review ) {
   })
 }
 
-editReview(id, newReview) {
-  const body = {newReview}
-  axios.put(`/api/books/${id}`, body).then(response => {
+editReview(id, review) {
+  const newReview = {review}
+  axios.put(`/api/books/${id}`, newReview).then(response => {
     this.setState({books: response.data})
   })
 }
@@ -57,7 +57,7 @@ removeBook(id) {
     return (
       <div className="App">
         <Header />
-        {booksMapped}
+        {/* {booksMapped} */}
         <Finder
           books = {this.state.books}
           editReview = {this.editReview}
