@@ -28,9 +28,12 @@
 ### Component Architecture
 - App.js (sateful component: This will hold the book information, this.state.books)
 - Header.js (functional component: This will hold my header to the site)
-- Finder.js (stateful component: this will get my book data that I have created in my file by using a axios request to get it.)
+- Finder.js (stateful component: this will get my book data that I have created 
+in my file by using a axios request to get it.)
+    - Book.js(stateful component: )
 - DisplayBook.js (functional component: this will display my books)
-    - Book.js (stateful componenet: this.state.review, this.state.editing)
+    - Review.js (stateful component: this.state.review, this.state.editing)
 
 ### Wireframe/ Mockup
-<img src = "./pictures/Stephen-King-mockup.PNG">
+<img src = "./pictures/Stephen-King-mockup1.PNG">
+<img src = "./pictures/Stephen-King-wireframe.PNG">
