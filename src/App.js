@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
-import DisplayBook from './components/DisplayBook';
+// import AddBook from './components/AddBook';
 import Finder from './components/Finder';
 import axios from 'axios';
 import './App.css';
@@ -10,12 +10,19 @@ constructor() {
   super();
 
   this.state = {
-    books: []
+    books: [],
+    isAddBookOpen: false
   }
 
   this.makeNewBook = this.makeNewBook.bind(this);
   this.editReview = this.editReview.bind(this);
   this.removeBook = this.removeBook.bind(this);
+}
+
+toggleMenuSelect = () => {
+  this.setState({
+    isAddBookOpen: !this.state.isAddBookOpen
+  });
 }
 
 componentDidMount() {
@@ -24,6 +31,16 @@ componentDidMount() {
     this.setState({books: response.data})
   }).catch(error => alert("Didn't get list of Stephen King books"))
 }
+
+// addBook() {
+//   let newBook = {
+//     title: this.title.value,
+//     year: this.year.value,
+//     pageCount: this.pageCount.value,
+//     img: this.img.value,
+//     review: this.review.value
+//   };
+// }
 
 makeNewBook(title, year, pageCount, img, review ) {
   const body = {title, year, pageCount, img, review}
@@ -48,12 +65,12 @@ removeBook(id) {
 
   render() {
     
-    const booksMapped = this.state.books.map(element => {
-      return <div>
-        <DisplayBook book = {element} />
-      </div>
+    // const booksMapped = this.state.books.map(element => {
+    //   return <div>
+    //     <DisplayBook book = {element} />
+    //   </div>
       
-    })
+    // })
     return (
       <div className="App">
         <Header />
@@ -63,6 +80,54 @@ removeBook(id) {
           editReview = {this.editReview}
           removeBook = {this.removeBook}
         />
+        <button className="drop-menu-add" onClick={this.toggleMenuSelect}>
+            Add Book Here
+          </button>
+      <div className = "add-book-container">
+      <p className={`new-book-wrap ${this.state.isAddBookOpen ? 'add-book-open' : null}`}>
+          <input
+            className="new-book-btn"
+            placeholder="title"
+            ref={title => {
+              this.makeNewBook.title = title;
+            }}
+          />
+          <input
+            type="number"
+            className="new-book-btn"
+            placeholder="year"
+            ref={year => {
+              this.makeNewBook.year = year;
+            }}
+          />
+          <input
+            type="number"
+            className="new-book-btn"
+            placeholder="pageCount"
+            ref={pageCount => {
+              this.makeNewBook.pageCount = pageCount;
+            }}
+          />
+          <input
+            className="new-book-btn"
+            placeholder="img"
+            ref={img => {
+              this.makeNewBook.img = img;
+            }}
+          />
+          <input
+            type="text"
+            className="new-book-btn"
+            placeholder="review"
+            ref={review => {
+              this.makeNewBook.review = review;
+            }}
+          />
+          <button className="new-book-btn-add" onClick={() => this.makeNewBook()}>
+            Add Book
+          </button>
+        </p>
+      </div>
       </div>
     );
   }

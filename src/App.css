@@ -50,3 +50,64 @@
   color: red;
   border-radius: 12px;
 }
+
+.add-book-container {
+
+}
+
+.new-book-wrap {
+display: none;
+
+}
+
+.add-book-open {
+  position: fixed;
+  top: 12%;
+  right: 25px;
+  width: 18vw;
+  height: 25vh;
+  background-color: green;
+  color:black ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: all 2s;
+}
+
+.drop-menu-add {
+  position: fixed;
+  top: 5%;
+  right: 60px;
+  background-color: green;
+  color: white;
+  border: 3px solid black;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.drop-menu-add:hover {
+  background-color: white;
+  color: green;
+
+}
+
+.new-book-btn {
+  margin: 3px;
+  border-radius: 12px;
+}
+
+.new-book-btn-add {
+  background-color: green;
+  color:white;
+  padding: 10px;
+  margin: 15px;
+  border: 3px solid black;
+  border-radius: 8px;
+}
+
+.new-book-btn-add:hover {
+  background-color: white;
+  color:green;
+}

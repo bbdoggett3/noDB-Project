@@ -54,7 +54,7 @@ class Review extends Component {
                         <button onClick={() => this.handleReview(this.props.data.id)}>Save</button>
                     </div>}
 
-                <button class ="remove-button" onClick={() => this.props.removeBook(this.props.data.id)}>Remove Book
+                <button className ="remove-button" onClick={() => this.props.removeBook(this.props.data.id)}>Remove Book
             </button>
             </div>
         )
