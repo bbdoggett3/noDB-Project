@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
-// import AddBook from './components/AddBook';
 import Finder from './components/Finder';
 import axios from 'axios';
 import './App.css';
@@ -31,16 +30,6 @@ componentDidMount() {
     this.setState({books: response.data})
   }).catch(error => alert("Didn't get list of Stephen King books"))
 }
-
-// addBook() {
-//   let newBook = {
-//     title: this.title.value,
-//     year: this.year.value,
-//     pageCount: this.pageCount.value,
-//     img: this.img.value,
-//     review: this.review.value
-//   };
-// }
 
 makeNewBook(title, year, pageCount, img, review ) {
   const body = {title, year, pageCount, img, review}
@@ -74,7 +63,6 @@ removeBook(id) {
     return (
       <div className="App">
         <Header />
-        {/* {booksMapped} */}
         <Finder
           books = {this.state.books}
           editReview = {this.editReview}
