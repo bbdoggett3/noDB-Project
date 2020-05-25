@@ -33,7 +33,7 @@ class Review extends Component {
     render() {
         console.log("this is the new input", this.state.userInput)
         return (
-            <div>
+            <div className="main-container">
                 <div className="books-container">
                     <img src= {this.props.data.img} alt={`Book cover for ${this.props.data.title} `} />
 
@@ -41,10 +41,11 @@ class Review extends Component {
                         <h3>{this.props.data.title}</h3>
                         <p><span>Year:</span> {this.props.data.year}</p>
                         <p><span>Pages:</span> {this.props.data.pageCount}</p>
-                        <p><span>Review:</span> {this.props.data.review}</p>
+                       
                     </div>
 
                 </div>
+                <p><span className="review-span">Review:</span> {this.props.data.review}</p>
 
                 {!this.state.isEditing ? <p className= "review" onClick={() => this.toggleEdit()}>Update Review</p> :
 

@@ -1,16 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Old+Standard+TT&display=swap');
+
 .App {
   text-align: center;
   background-color: #333333;
   color: white
 }
 
+.img-header-logo {
+  padding: 25px;
+}
+
+h1 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight: lighter;
+  letter-spacing: 13px;
+  padding: 5px;
+} 
+
+.main-container {
+  font-family: 'Old Standard TT', serif;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 12px;
+  background-color: #CFA950;
+  color: #333333;
+  margin: 4px;
+
+}
+
 .books-container {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   padding:10px;
+}
+
+.books-info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 10px;
+  
 }
 
 .books-container img {
@@ -22,27 +55,34 @@
   font-weight: bolder;
 }
 
+.review-span {
+  font-weight: bolder;
+}
+
 .review {
   margin: auto;
-  width: 15%;
-  background-color: green;
-  border: 3px solid black;
+  width: 45%;
+  background-color: #333333;
+  border: 3px solid #CFA950;
   border-radius: 12px;
   padding: 10px;
   color: white;
+  transition: 1s;
 }
 
 .review:hover {
   background-color: white;
-  color: green;
+  color: #CFA950;
 }
 
 .remove-button {
   background-color: red;
   color: white;
+  border: 3px solid #CFA950;
   border-radius: 12px;
   padding: 5px;
   margin: 8px;
+  transition: 1s;
 }
 
 .remove-button:hover {
@@ -51,10 +91,8 @@
   border-radius: 12px;
 }
 
-
 .new-book-wrap {
 display: none;
-
 }
 
 .add-book-open {
@@ -66,24 +104,24 @@ display: none;
   border-radius: 12px;
   border: 3px solid black;
   background-color: green;
-  color:black ;
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  transition: all 2s;
 }
 
 .drop-menu-add {
   position: fixed;
   top: 5%;
   right: 60px;
-  background-color: green;
+  background-color: #333333;
   color: white;
-  border: 3px solid black;
+  font-weight: bolder;
+  border: 3px solid green;
   padding: 20px;
   border-radius: 20px;
+  transition: 1s;
 }
 
 .drop-menu-add:hover {
@@ -97,15 +135,16 @@ display: none;
 }
 
 .new-book-btn-add {
-  background-color: green;
+  background-color: #333333;
   color:white;
   padding: 10px;
   margin: 15px;
-  border: 3px solid black;
+  border: 3px solid green;
   border-radius: 8px;
+  transition: 1s;
 }
 
 .new-book-btn-add:hover {
   background-color: white;
-  color:green;
+  color: #CFA950;
 }
