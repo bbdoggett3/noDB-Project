@@ -10,12 +10,24 @@ constructor() {
 
   this.state = {
     books: [],
-    isAddBookOpen: false
+    isAddBookOpen: false,
+    title: "",
+    year: 0,
+    pageCount: 0,
+    img: "",
+    review: ""
   }
 
   this.makeNewBook = this.makeNewBook.bind(this);
   this.editReview = this.editReview.bind(this);
   this.removeBook = this.removeBook.bind(this);
+  this.handleChange = this.handleChange.bind(this);
+}
+
+handleChange(event) {
+  this.setState({
+    [event.target.name]: event.target.value
+  })
 }
 
 toggleMenuSelect = () => {
@@ -32,7 +44,7 @@ componentDidMount() {
 }
 
 makeNewBook(title, year, pageCount, img, review ) {
-  const body = {title, year, pageCount, img, review}
+  const body = {title: this.state.title, year: this.state.year, pageCount: this.state.pageCount, img: this.state.img, review: this.state.review}
   axios.post('/api/books', body).then(response => {
     this.setState({books: response.data})
   }).catch(error => alert("Can't make a new Book at this time"))
@@ -79,6 +91,8 @@ removeBook(id) {
             ref={title => {
               this.makeNewBook.title = title;
             }}
+            name="title"
+            onChange = {this.handleChange}
           />
           <input
             type="number"
@@ -87,6 +101,8 @@ removeBook(id) {
             ref={year => {
               this.makeNewBook.year = year;
             }}
+            name= "year"
+            onChange = {this.handleChange}
           />
           <input
             type="number"
@@ -95,6 +111,8 @@ removeBook(id) {
             ref={pageCount => {
               this.makeNewBook.pageCount = pageCount;
             }}
+            name="pageCount"
+            onChange = {this.handleChange}
           />
           <input
             className="new-book-btn"
@@ -102,6 +120,8 @@ removeBook(id) {
             ref={img => {
               this.makeNewBook.img = img;
             }}
+            name="img"
+            onChange = {this.handleChange}
           />
           <input
             type="text"
@@ -110,6 +130,8 @@ removeBook(id) {
             ref={review => {
               this.makeNewBook.review = review;
             }}
+            name="review"
+            onChange = {this.handleChange}
           />
           <button className="new-book-btn-add" onClick={() => this.makeNewBook()}>
             Add Book
