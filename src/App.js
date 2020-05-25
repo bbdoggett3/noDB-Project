@@ -65,13 +65,7 @@ removeBook(id) {
 }
 
   render() {
-    
-    // const booksMapped = this.state.books.map(element => {
-    //   return <div>
-    //     <DisplayBook book = {element} />
-    //   </div>
-      
-    // })
+ 
     return (
       <div className="App">
         <Header />
@@ -80,6 +74,7 @@ removeBook(id) {
           editReview = {this.editReview}
           removeBook = {this.removeBook}
         />
+        
         <button className="drop-menu-add" onClick={this.toggleMenuSelect}>
             Add Book Here
           </button>
