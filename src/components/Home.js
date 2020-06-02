@@ -3,10 +3,9 @@ import Header from './components/Header';
 import Finder from './components/Finder';
 import axios from 'axios';
 import './App.css';
-import routes from './routes';
 import {Link} from 'react-router-dom';
 
-class App extends Component {
+class Home extends Component {
 constructor() {
   super();
 
@@ -76,9 +75,9 @@ removeBook(id) {
           editReview = {this.editReview}
           removeBook = {this.removeBook}
         />
-        {routes}
 
-        <Link></Link>
+        <Link to='/'><button>Home</button></Link>
+        <Link to='/about'><button className='about-btn'>About</button></Link>
         
         <button className="drop-menu-add" onClick={this.toggleMenuSelect}>
             Add Book Here
@@ -144,4 +143,4 @@ removeBook(id) {
  
 }
 
-export default App;
+export default Home;

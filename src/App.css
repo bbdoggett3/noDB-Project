@@ -129,6 +129,17 @@ display: none;
   color: green;
 }
 
+.about-btn {
+  position: fixed;
+  top: 8%;
+  right: 220px;
+  background-color: #333333;
+  border: none;
+  color: white;
+  text-decoration: underline white;
+  font-size: 15px;
+}
+
 .new-book-btn {
   margin: 3px;
   border-radius: 12px;
